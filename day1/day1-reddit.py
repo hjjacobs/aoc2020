@@ -1,3 +1,5 @@
+# from Reddit
+
 import itertools
 import math
 

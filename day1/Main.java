@@ -1,5 +1,7 @@
+/**
+ * From Reddit
+ */
 package day1;
-
 
 import java.util.*;
 

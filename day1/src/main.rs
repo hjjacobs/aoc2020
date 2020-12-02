@@ -1,3 +1,5 @@
+// From Reddit
+
 use itertools::Itertools;
 
 fn main() {

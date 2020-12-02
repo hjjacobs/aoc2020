@@ -1,4 +1,4 @@
-path = '/Users/hjj/Projects/private/aoc2020/day1/input.txt'
+path = 'day1/input.txt'
 
 with open(path) as f:
     amounts = f.read().splitlines()

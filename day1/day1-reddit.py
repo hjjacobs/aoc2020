@@ -3,7 +3,7 @@ import math
 
 def read():
     input_list = []
-    with open('/Users/hjj/Projects/private/aoc2020/day1/input.txt') as f:
+    with open('day1/input.txt') as f:
         for line in f:
             input_list.append(int(line))
     return input_list

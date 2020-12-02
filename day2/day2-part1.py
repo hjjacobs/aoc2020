@@ -1,10 +1,7 @@
-import itertools
-import math
-
 def count_valid_passwords():
     valid_passwords = 0
 
-    with open('/Users/hjj/Projects/private/aoc2020/day2/input.txt') as f:
+    with open('day2/input.txt') as f:
         for line in f:
             items = line.split(' ')
             min = int(items[0].split('-')[0])

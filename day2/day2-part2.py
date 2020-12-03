@@ -1,5 +1,3 @@
-import os
-
 def count_valid_passwords():
     number_of_valid_passwords = 0
 
@@ -29,4 +27,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    print(os.getcwd())

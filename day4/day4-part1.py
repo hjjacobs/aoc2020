@@ -8,7 +8,7 @@ def read_file():
     pasports = []
     pasport = []
 
-    with open('day4/test.txt') as f:
+    with open('day4/input.txt') as f:
         for line in f:
             items = line.rstrip().split(' ')
 
@@ -23,22 +23,38 @@ def read_file():
 
     return pasports
 
+def extract_pasport_fields(pasport):
+    fields = []
+
+    for field in pasport:
+        fields.append(field.split(':')[0])
+
+    return fields
+
 def check_pasports(pasports):
-    required_fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid', 'cid']
+#    required_fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid', 'cid']
+    required_fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'] # fixed for cid
+    number_of_valid_pasports = 0
 
     for pasport in pasports:
-        print(pasport)
-        for field in pasport:
-            fieldid = field.split(':')[0]
-            if fieldid in required_fields:
-                print('ok')
-            
+
+        pasport_check_ok = True
+
+        fields = extract_pasport_fields(pasport)
+
+        for rf in required_fields:
+            pasport_check_ok = pasport_check_ok & (rf in fields)   
+
+        if pasport_check_ok:
+            number_of_valid_pasports+=1
+        
+    return number_of_valid_pasports
 
 
 def main():
     pasports = read_file()
     print(f"Pasport count {len(pasports)}")
-    check_pasports(pasports)
+    print(f"Number of valid pasports: {check_pasports(pasports)}")
 
 if __name__ == '__main__':
     main()
